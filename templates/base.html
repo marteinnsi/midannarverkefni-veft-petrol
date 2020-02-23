@@ -10,12 +10,20 @@
 </head>
 
 <body>
-    <header>
-        {% block header%}{%endblock header%}
-    </header>
-    <main>
-        {% block content %}{% endblock content %}
-    </main>
+    <div class="grid">
+        <header>
+            {% block header%}{%endblock header%}
+        </header>
+        <main>
+            {% block content %}{% endblock content %}
+        </main>
+        <aside>
+            {% block sidebar %}{% endblock sidebar %}
+        </aside>
+        <footer>
+            <p>&copy; Marteinn</p>
+        </footer>
+    </div>
 </body>
 
 </html>

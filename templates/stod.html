@@ -1,5 +1,24 @@
 {% extends "base.html" %}
 
+{% block title %}Home{% endblock title%}
+
 {% block header %}
-<p>Stöð x</p>
+<nav>
+    <a href="/" style="color: black; line-height: 42px;">Aftur heim</a>
+</nav>
 {% endblock header %}
+
+{% block content %}
+<h1>Heimasíða bensínstöðvasíðunar</h1>
+
+{% endblock content %}
+
+{% block sidebar %}
+
+<ul class="station-list">
+    {% for station in stations  %}
+    <li><a href="/stodvar/{{station}}">{{ station }}</a></li>
+    {% endfor %}
+</ul>
+
+{% endblock sidebar %}

@@ -36,6 +36,7 @@ def getStations():
     stations = set()
     for entry in petrolEntries:
         stations.add(entry.company)
+    return stations
 
 
 def getCheapestStation():
@@ -72,9 +73,11 @@ def route_index():
     )
 
 
-@app.route("/bensinstod/<bensinstod>")
-def route_bensinstod(stod):
-    return render_template("stod.html")
+@app.route("/stodvar/<bensinstod>")
+def route_bensinstod(bensinstod):
+    return render_template("stod.html",
+    stations=uniqueStations,
+    station_logos=petrolLogo)
 
 @app.errorhandler(404)
 def page_not_found(e):

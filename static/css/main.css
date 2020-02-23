@@ -15,16 +15,60 @@ $sage: rgba(175, 188, 136, 1);
 
 html, head, body {
     background-color: rgba(175, 188, 136, 1);
+    width: 100%;
+    height:100%;
+}
+
+.grid {
+    min-height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: "topbar topbar topbar" "content content sidebar" "footer footer footer";
 }
 
 header {
-    padding: 3em;
+    grid-area: topbar;
     background-color: darkgreen;
 }
 
 main {
+    grid-area: content;
     background-color: rgba(97, 139, 74, 1);
-    padding: 3em;
-    max-width: 85em;
-    margin: 0 auto;
+    padding: 1em;
+}
+ 
+aside {
+    grid-area: sidebar;
+    padding: 1em;
+}
+  
+footer {
+    grid-area: footer;
+    background-color: red;
+}
+
+
+/**/
+.station-list {
+    text-align: center;
+    list-style: none;
+}
+
+.info-cheap-petrol, .info-cheap-diesel {
+    padding: .5em;
+}
+
+nav {
+   line-height: 42px;
+   color: black;
+   padding: 1em; 
+}
+
+nav a{
+    text-decoration: none;
+}
+
+nav a+a::before {
+    content: "| ";
 }
