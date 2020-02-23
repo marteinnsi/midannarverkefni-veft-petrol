@@ -1,0 +1,30 @@
+/*
+https://coolors.co/export/copic/d7f9f1-7aa095-40531b-618b4a-afbc88
+$azureishWhite: rgba(215, 249, 241, 1);
+$desaturatedCyan: rgba(122, 160, 149, 1);
+$armyGreen: rgba(64, 83, 27, 1);
+$maxGreen: rgba(97, 139, 74, 1);
+$sage: rgba(175, 188, 136, 1);
+*/
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html, head, body {
+    background-color: rgba(175, 188, 136, 1);
+}
+
+header {
+    padding: 3em;
+    background-color: darkgreen;
+}
+
+main {
+    background-color: rgba(97, 139, 74, 1);
+    padding: 3em;
+    max-width: 85em;
+    margin: 0 auto;
+}
