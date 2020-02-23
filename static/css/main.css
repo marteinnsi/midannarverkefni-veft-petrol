@@ -29,18 +29,19 @@ html, head, body {
 
 header {
     grid-area: topbar;
-    background-color: darkgreen;
+    background-color: rgb(202, 0, 0);
 }
 
 main {
     grid-area: content;
-    background-color: rgba(97, 139, 74, 1);
+    background-color: hsl(0, 0%, 86%);
     padding: 1em;
 }
  
 aside {
     grid-area: sidebar;
     padding: 1em;
+    background-color: hsl(0, 0%, 82%);
 }
   
 footer {
