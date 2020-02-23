@@ -3,13 +3,24 @@
 {% block title %}Home{% endblock title%}
 
 {% block header %}
-<p id="info-cheap-petrol">{{cheapest_petrol_station}} eru með ódýrasta bensínið á {{cheapest_petrol_price}}kr per líter.
-</p>
-<p id="info-cheap-diesel">{{cheapest_diesel_station}} eru með ódýrasta dieselið á {{cheapest_diesel_price}}kr per líter.
-</p>
+<p id="info-cheap-petrol">{{cheapest_petrol_station}} eru með ódýrasta bensínið á {{cheapest_petrol_price}}kr per líter.</p>
+<p id="info-cheap-diesel">{{cheapest_diesel_station}} eru með ódýrasta dieselið á {{cheapest_diesel_price}}kr per líter.</p>
 {% endblock header %}
 
 {% block content %}
 <h1>Heimasíða bensínstöðvasíðunar</h1>
+
+<div class="cheapest-petrol">
+    <h1>Í dag eru {{cheapest_petrol_station}} með ódýrasta bensínið.</h1>
+    <img src="{{station_logos[cheapest_petrol_station]}}" width="256px" alt="{{cheapest_petrol_station}}">
+    <h3>Verð per líter: {{cheapest_petrol_price}}</h3>
+</div>
+
+
+<div class="cheapest-diesel">
+    <h1>Í dag eru {{cheapest_diesel_station}} með ódýrasta dieselið</h1>
+    <img src="{{station_logos[cheapest_diesel_station]}}" width="256px" alt="{{cheapest_diesel_station}}">
+    <h3>Verð per líter: {{cheapest_diesel_price}}</h3>
+</div>
 
 {% endblock content %}

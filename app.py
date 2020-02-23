@@ -32,7 +32,7 @@ petrolLogo = {
     "Costco Iceland": "https://dividendvaluebuilder.com/wp-content/uploads/2016/04/COST2.jpg",
 }
 
-def getStations()
+def getStations():
     stations = set()
     for entry in petrolEntries:
         stations.add(entry.company)
