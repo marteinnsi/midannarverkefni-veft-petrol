@@ -72,9 +72,13 @@ def route_index():
     )
 
 
-@app.route("/<bensinstod>")
+@app.route("/bensinstod/<bensinstod>")
 def route_bensinstod(stod):
     return render_template("stod.html")
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
 
 
 if __name__ == "__main__":
