@@ -1,5 +1,6 @@
 from flask import Flask
 from flask import render_template
+from flask import abort
 import requests
 
 # Ég hefði getað unnið þetta mikið betur en átti mjög lítinn tíma svo þetta er svolítið lélégur kóði vona að það afsakist.
@@ -58,6 +59,19 @@ def getCheapestStation():
         "diesel": (cheapestDieselStation, cheapestDieselPrice)
     }
 
+def getPricePetrol(station):
+    for b in petrolEntries:
+        if b.company == station:
+            return b.bensin95
+    return -1
+
+def getPriceDiesel(station):
+    for b in petrolEntries:
+        if b.company == station:
+            return b.diesel
+    return -1
+    
+
 uniqueStations = getStations()
 cheapestStation = getCheapestStation()
 
@@ -75,13 +89,19 @@ def route_index():
 
 @app.route("/stodvar/<bensinstod>")
 def route_bensinstod(bensinstod):
-    return render_template("stod.html",
-    stations=uniqueStations,
-    station_logos=petrolLogo)
+    if bensinstod in uniqueStations:
+        return render_template("stod.html",
+        station=bensinstod,
+        station_petrol=getPricePetrol(bensinstod),
+        station_diesel=getPriceDiesel(bensinstod),
+        stations=uniqueStations,
+        station_logos=petrolLogo)
+    else:
+        abort(404)
 
 @app.errorhandler(404)
-def page_not_found(e):
-    return render_template('404.html'), 404
+def route_404(e):
+    return render_template("404.html"), 404
 
 
 if __name__ == "__main__":

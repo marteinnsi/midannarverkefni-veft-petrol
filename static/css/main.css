@@ -35,7 +35,7 @@ header {
 main {
     grid-area: content;
     background-color: hsl(0, 0%, 86%);
-    padding: 1em;
+    padding: 1em 2.5em;
 }
  
 aside {
