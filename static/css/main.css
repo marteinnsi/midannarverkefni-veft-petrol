@@ -29,7 +29,7 @@ html, head, body {
 
 header {
     grid-area: topbar;
-    background-color: rgb(202, 0, 0);
+    background-color: grey;
 }
 
 main {
