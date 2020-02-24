@@ -73,3 +73,31 @@ nav a{
 nav a+a::before {
     content: "| ";
 }
+
+.line {
+    height: 1px !important;
+    width: 100%;
+    background-color: black;
+    margin: 1em 0;
+}
+
+.all-locations {
+    width: 100%;
+}
+
+.all-locations th {
+    background-color: darkgrey;
+    border: thin solid black;
+}
+
+.all-locations tr {
+    background-color: rgb(194, 194, 194);
+}
+
+.all-locations tr:nth-of-type(odd) {
+    background-color: rgb(172, 170, 170);
+}
+
+.all-locations th,tr {
+    padding: .8em;
+}
